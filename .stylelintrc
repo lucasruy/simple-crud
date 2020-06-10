@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "color-no-invalid-hex": true,
+    "max-empty-lines": 2,
+    "comment-no-empty": true,
+    "no-extra-semicolons": true,
+    "max-nesting-depth": 2
+  }
+}
