@@ -1,9 +1,26 @@
 import * as constants from '../constants/postsConstants'
 
 const INITIAL_STATE = {
-  isRequest: true,
-  payload: [],
-  error: {},
+  get: {
+    isRequest: true,
+    payload: [],
+    error: {},
+  },
+  create: {
+    isRequest: true,
+    payload: [],
+    error: {},
+  },
+  edit: {
+    isRequest: true,
+    payload: [],
+    error: {},
+  },
+  delete: {
+    isRequest: true,
+    payload: [],
+    error: {},
+  },
 }
 
 export default function posts(state = INITIAL_STATE, action = {}) {
@@ -11,82 +28,122 @@ export default function posts(state = INITIAL_STATE, action = {}) {
     case constants.GET_ALL_POSTS_REQUEST:
       return {
         ...state,
+        get: {
+          ...state.get,
+          isRequest: true,
+        },
       }
 
     case constants.GET_ALL_POSTS_SUCCESS:
       return {
         ...state,
-        isRequest: false,
-        payload: action.payload,
+        get: {
+          ...state.get,
+          isRequest: false,
+          payload: action.payload,
+        },
       }
 
     case constants.GET_ALL_POSTS_FAILURE:
       return {
         ...state,
-        isRequest: false,
-        error: action.error,
+        get: {
+          ...state.get,
+          isRequest: false,
+          error: action.error,
+        },
       }
 
     case constants.CREATE_POST_REQUEST:
       return {
         ...state,
+        create: {
+          ...state.create,
+          isRequest: true,
+        },
       }
 
     case constants.CREATE_POST_SUCCESS:
       return {
         ...state,
-        isRequest: false,
-        payload: [...state.payload, ...action.payload],
+        create: {
+          ...state.create,
+          isRequest: false,
+          payload: [...state.payload, ...action.payload],
+        },
       }
 
     case constants.CREATE_POST_FAILURE:
       return {
         ...state,
-        isRequest: false,
-        error: action.error,
+        create: {
+          ...state.create,
+          isRequest: false,
+          error: action.error,
+        },
       }
 
     case constants.EDIT_POST_REQUEST:
       return {
         ...state,
+        edit: {
+          ...state.edit,
+          isRequest: true,
+        },
       }
 
     case constants.EDIT_POST_SUCCESS:
       return {
         ...state,
-        isRequest: false,
-        payload: state.payload.map((item) => {
-          if (item.id === action.payload.id) {
-            return { ...item, ...action.payload }
-          }
-          return item
-        }),
+        edit: {
+          ...state.edit,
+          isRequest: false,
+          payload: state.get.payload.map((item) => {
+            if (item.id === action.payload.id) {
+              return { ...item, ...action.payload }
+            }
+            return item
+          }),
+        },
       }
 
     case constants.EDIT_POST_FAILURE:
       return {
         ...state,
-        isRequest: false,
-        error: action.error,
+        edit: {
+          ...state.edit,
+          isRequest: false,
+          error: action.error,
+        },
       }
 
     case constants.DELETE_POST_REQUEST:
       return {
         ...state,
+        delete: {
+          ...state.delete,
+          isRequest: true,
+        },
       }
 
     case constants.DELETE_POST_SUCCESS:
       return {
         ...state,
-        isRequest: false,
-        payload: state.payload,
+        delete: {
+          ...state.delete,
+          isRequest: false,
+          payload: action.payload,
+        },
       }
 
     case constants.DELETE_POST_FAILURE:
       return {
         ...state,
-        isRequest: false,
-        error: action.error,
+        delete: {
+          ...state.delete,
+          isRequest: false,
+          error: action.error,
+        },
       }
 
     default:
