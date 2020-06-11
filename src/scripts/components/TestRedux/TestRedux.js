@@ -8,27 +8,39 @@ const TestRedux = () => {
   const dispatch = useDispatch()
   const posts = useSelector((state) => state.posts)
 
-  const sendToCreatePost = () => {
+  const sendToCreatePost = (e) => {
+    e.preventDefault()
+
+    const formData = new FormData(e.target)
+
     dispatch(
       postsActions.createPost({
-        username: 'Dean Smith',
-        title: 'Aston Villa Football Club',
-        content: 'Villa have a fierce local rivalry with Birmingham City and the Second City derby between the teams has been played since 1879.',
+        username: formData.get('username'),
+        title: formData.get('title'),
+        content: formData.get('content'),
       })
     )
   }
 
-  const sendToEditPost = () => {
+  const sendToEditPost = (e) => {
+    e.preventDefault()
+
+    const formData = new FormData(e.target)
+
     dispatch(
-      postsActions.editPost(21, {
-        title: 'Newcastle United Football Club',
-        content: 'Is an English professional football club based in Newcastle, that plays in the Premier League, the top flight of English football.',
+      postsActions.editPost(formData.get('id'), {
+        title: formData.get('title'),
+        content: formData.get('content'),
       })
     )
   }
 
-  const sendToDeletePost = () => {
-    dispatch(postsActions.deletePost(20))
+  const sendToDeletePost = (e) => {
+    e.preventDefault()
+
+    const formData = new FormData(e.target)
+
+    dispatch(postsActions.deletePost(formData.get('id')))
   }
 
   useEffect(() => {
@@ -38,17 +50,35 @@ const TestRedux = () => {
   return (
     <div className="test-redux">
       <h4>Get data from store.</h4>
-      <button type="button" onClick={sendToCreatePost}>
-        Create a post
-      </button>
-      <button type="button" onClick={sendToEditPost}>
-        Edit post
-      </button>
-      <button type="button" onClick={sendToDeletePost}>
-        Delete post
-      </button>
+
+      <form onSubmit={sendToCreatePost}>
+        <label htmlFor="username">Username:</label>
+        <input type="text" id="username" name="username" />
+        <label htmlFor="title">Title:</label>
+        <input type="text" id="title" name="title" />
+        <label htmlFor="content">Content:</label>
+        <input type="text" id="content" name="content" />
+        <button>Create a post</button>
+      </form>
+
+      <form onSubmit={sendToEditPost}>
+        <label htmlFor="id">ID:</label>
+        <input type="text" id="id" name="id" />
+        <label htmlFor="title">Title:</label>
+        <input type="text" id="title" name="title" />
+        <label htmlFor="content">Content:</label>
+        <input type="text" id="content" name="content" />
+        <button>Edit post</button>
+      </form>
+
+      <form onSubmit={sendToDeletePost}>
+        <label htmlFor="id">ID:</label>
+        <input type="text" id="id" name="id" />
+        <button>Delete post</button>
+      </form>
+
       <ul>
-        {posts.payload.map((post) => (
+        {posts.get.payload.map((post) => (
           <li key={post.id}>{post.title}</li>
         ))}
       </ul>
