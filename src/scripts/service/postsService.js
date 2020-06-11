@@ -14,3 +14,14 @@ export const getAllPosts = async () => {
 
   return response
 }
+
+export const createPost = async (payload) => {
+  const response = await request
+    .post('/careers/', payload)
+    .then((data) => data)
+    .catch((err) => {
+      throw err.response
+    })
+
+  return response
+}

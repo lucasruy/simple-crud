@@ -14,6 +14,17 @@ function* getAllPosts() {
   }
 }
 
+function* createPost({ data }) {
+  try {
+    const response = yield call(service.createPost, data)
+
+    yield put(actions.createPostSuccess(response))
+  } catch (err) {
+    yield put(actions.createPostFailure(err))
+  }
+}
+
 export default function* root() {
   yield takeLatest(constants.GET_ALL_POSTS_REQUEST, getAllPosts)
+  yield takeLatest(constants.CREATE_POST_REQUEST, createPost)
 }
