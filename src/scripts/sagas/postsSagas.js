@@ -19,6 +19,7 @@ function* createPost({ data }) {
     const response = yield call(service.createPost, data)
 
     yield put(actions.createPostSuccess(response.data))
+    yield put(actions.getAllPosts())
   } catch (err) {
     yield put(actions.createPostFailure(err))
   }
@@ -29,6 +30,7 @@ function* editPost({ id, data }) {
     const response = yield call(service.editPost, id, data)
 
     yield put(actions.editPostSuccess(response.data))
+    yield put(actions.getAllPosts())
   } catch (err) {
     yield put(actions.editPostFailure(err))
   }
@@ -39,6 +41,7 @@ function* deletePost({ id }) {
     const response = yield call(service.deletePost, id)
 
     yield put(actions.deletePostSuccess(response.data))
+    yield put(actions.getAllPosts())
   } catch (err) {
     yield put(actions.deletePostFailure(err))
   }
