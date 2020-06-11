@@ -18,13 +18,24 @@ function* createPost({ data }) {
   try {
     const response = yield call(service.createPost, data)
 
-    yield put(actions.createPostSuccess(response))
+    yield put(actions.createPostSuccess(response.data))
   } catch (err) {
     yield put(actions.createPostFailure(err))
+  }
+}
+
+function* editPost({ id, data }) {
+  try {
+    const response = yield call(service.editPost, id, data)
+
+    yield put(actions.editPostSuccess(response.data))
+  } catch (err) {
+    yield put(actions.editPostFailure(err))
   }
 }
 
 export default function* root() {
   yield takeLatest(constants.GET_ALL_POSTS_REQUEST, getAllPosts)
   yield takeLatest(constants.CREATE_POST_REQUEST, createPost)
+  yield takeLatest(constants.EDIT_POST_REQUEST, editPost)
 }

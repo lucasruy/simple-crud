@@ -28,3 +28,19 @@ export const createPostFailure = (error) => ({
   type: constants.CREATE_POST_FAILURE,
   error,
 })
+
+export const editPost = (id, data) => ({
+  type: constants.EDIT_POST_REQUEST,
+  id,
+  data,
+})
+
+export const editPostSuccess = (payload) => ({
+  type: constants.EDIT_POST_SUCCESS,
+  payload,
+})
+
+export const editPostFailure = (error) => ({
+  type: constants.EDIT_POST_FAILURE,
+  error,
+})

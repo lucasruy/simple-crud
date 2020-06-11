@@ -25,3 +25,14 @@ export const createPost = async (payload) => {
 
   return response
 }
+
+export const editPost = async (id, payload) => {
+  const response = await request
+    .patch(`/careers/${id}/`, payload)
+    .then((data) => data)
+    .catch((err) => {
+      throw err.response
+    })
+
+  return response
+}

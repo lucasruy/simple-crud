@@ -36,10 +36,34 @@ export default function posts(state = INITIAL_STATE, action = {}) {
       return {
         ...state,
         isRequest: false,
-        payload: [...state.payload, ...action.payload.data],
+        payload: [...state.payload, ...action.payload],
       }
 
     case constants.CREATE_POST_FAILURE:
+      return {
+        ...state,
+        isRequest: false,
+        error: action.error,
+      }
+
+    case constants.EDIT_POST_REQUEST:
+      return {
+        ...state,
+      }
+
+    case constants.EDIT_POST_SUCCESS:
+      return {
+        ...state,
+        isRequest: false,
+        payload: state.payload.map((item) => {
+          if (item.id === action.payload.id) {
+            return { ...item, ...action.payload }
+          }
+          return item
+        }),
+      }
+
+    case constants.EDIT_POST_FAILURE:
       return {
         ...state,
         isRequest: false,
