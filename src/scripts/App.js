@@ -1,11 +1,17 @@
 import React from 'react'
-import './App.css'
+import { Provider } from 'react-redux'
+
+import store from './redux/store'
 
 const App = () => (
-  <div>
-    <h1>CodeLeap Network</h1>
-    <p>This is initial structure to start mini-project using React & Redux.</p>
-  </div>
+  <Provider store={store}>
+    <div>
+      <h1>CodeLeap Network</h1>
+      <p>
+        This is initial structure to start mini-project using React & Redux.
+      </p>
+    </div>
+  </Provider>
 )
 
 export default App
