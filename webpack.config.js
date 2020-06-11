@@ -1,12 +1,10 @@
-const webpack = require('webpack')
 const path = require('path')
 
 const CopyPlugin = require('copy-webpack-plugin')
 const StylelintPlugin = require('stylelint-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 const config = {
   entry: './src/index.js',
@@ -17,7 +15,7 @@ const config = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: false,
-    port: 9090
+    port: 9090,
   },
   module: {
     rules: [
@@ -68,21 +66,19 @@ const config = {
   },
   plugins: [
     new CopyPlugin({
-      patterns: [
-        { from: 'src/assets/', to: 'assets' },
-      ],
+      patterns: [{ from: 'src/assets/', to: 'assets' }],
     }),
     new HtmlWebpackPlugin({
       title: 'CodeLeap Network',
       filename: 'index.html',
       favicon: './src/assets/images/favicon.png',
-      meta: { viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no' }
+      meta: { viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
     }),
     new StylelintPlugin({
-      files: '**/*.css'
+      files: '**/*.css',
     }),
     new MiniCssExtractPlugin({
-      filename: 'assets/stylesheet/[name].css'
+      filename: 'assets/stylesheet/[name].css',
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
