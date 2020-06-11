@@ -69,7 +69,7 @@ export default function posts(state = INITIAL_STATE, action = {}) {
         create: {
           ...state.create,
           isRequest: false,
-          payload: [...state.payload, ...action.payload],
+          payload: [...state.create.payload, { ...action.payload }],
         },
       }
 
