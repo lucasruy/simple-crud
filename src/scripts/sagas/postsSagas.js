@@ -34,8 +34,19 @@ function* editPost({ id, data }) {
   }
 }
 
+function* deletePost({ id }) {
+  try {
+    const response = yield call(service.deletePost, id)
+
+    yield put(actions.deletePostSuccess(response.data))
+  } catch (err) {
+    yield put(actions.deletePostFailure(err))
+  }
+}
+
 export default function* root() {
   yield takeLatest(constants.GET_ALL_POSTS_REQUEST, getAllPosts)
   yield takeLatest(constants.CREATE_POST_REQUEST, createPost)
   yield takeLatest(constants.EDIT_POST_REQUEST, editPost)
+  yield takeLatest(constants.DELETE_POST_REQUEST, deletePost)
 }

@@ -70,6 +70,25 @@ export default function posts(state = INITIAL_STATE, action = {}) {
         error: action.error,
       }
 
+    case constants.DELETE_POST_REQUEST:
+      return {
+        ...state,
+      }
+
+    case constants.DELETE_POST_SUCCESS:
+      return {
+        ...state,
+        isRequest: false,
+        payload: state.payload,
+      }
+
+    case constants.DELETE_POST_FAILURE:
+      return {
+        ...state,
+        isRequest: false,
+        error: action.error,
+      }
+
     default:
       return state
   }

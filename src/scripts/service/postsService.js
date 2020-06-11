@@ -36,3 +36,14 @@ export const editPost = async (id, payload) => {
 
   return response
 }
+
+export const deletePost = async (id) => {
+  const response = await request
+    .delete(`/careers/${id}/`)
+    .then((data) => data)
+    .catch((err) => {
+      throw err.response
+    })
+
+  return response
+}

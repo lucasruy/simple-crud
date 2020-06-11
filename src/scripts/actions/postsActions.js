@@ -44,3 +44,18 @@ export const editPostFailure = (error) => ({
   type: constants.EDIT_POST_FAILURE,
   error,
 })
+
+export const deletePost = (id) => ({
+  type: constants.DELETE_POST_REQUEST,
+  id,
+})
+
+export const deletePostSuccess = (payload) => ({
+  type: constants.DELETE_POST_SUCCESS,
+  payload,
+})
+
+export const deletePostFailure = (error) => ({
+  type: constants.DELETE_POST_FAILURE,
+  error,
+})
