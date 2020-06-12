@@ -1,0 +1,31 @@
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 30px 35px 30px;
+
+  &__title {
+    display: block;
+    margin: 0;
+    color: var(--color-black);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  &--default {
+    background-color: transparent;
+    color: var(--color-black);
+  }
+
+  &--black {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 25px 30px;
+    margin-bottom: 30px;
+
+    .card-header__title {
+      color: var(--color-white);
+    }
+  }
+}
