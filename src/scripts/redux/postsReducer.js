@@ -1,4 +1,4 @@
-import * as constants from '../constants/postsConstants'
+import * as constants from 'constants/postsConstants'
 
 const INITIAL_STATE = {
   get: {

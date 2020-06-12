@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import './test-redux.css'
-import * as postsActions from '../../actions/postsActions'
+import * as postsActions from 'actions/postsActions'
 
 const TestRedux = () => {
   const dispatch = useDispatch()

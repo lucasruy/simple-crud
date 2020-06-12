@@ -63,6 +63,13 @@ const config = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    alias: {
+      actions: path.resolve(__dirname, 'src/scripts/actions/'),
+      components: path.resolve(__dirname, 'src/scripts/components/'),
+      constants: path.resolve(__dirname, 'src/scripts/constants/'),
+      service: path.resolve(__dirname, 'src/scripts/service/'),
+      sagas: path.resolve(__dirname, 'src/scripts/sagas/'),
+    },
   },
   plugins: [
     new CopyPlugin({

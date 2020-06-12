@@ -1,4 +1,4 @@
-import * as constants from '../constants/postsConstants'
+import * as constants from 'constants/postsConstants'
 
 export const getAllPosts = () => ({
   type: constants.GET_ALL_POSTS_REQUEST,

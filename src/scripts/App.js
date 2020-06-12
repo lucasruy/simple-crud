@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 
 import { configureStore } from './redux/store'
 
-import { TestRedux } from './components/TestRedux'
+import { TestRedux } from 'components/TestRedux'
 
 const store = configureStore()
 
