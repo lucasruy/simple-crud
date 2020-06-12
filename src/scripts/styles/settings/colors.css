@@ -3,7 +3,8 @@
   --color-black: #000000;
 
   --color-grey-lighten: #CCCCCC;
-  --color-grey: #777777;
+  --color-grey: #DDDDDD;
+  --color-grey-dark: #777777;
   --color-grey-darken: #999999;
 
   --color-overlay: rgba(119, 119, 119, 0.8);
