@@ -1,8 +1,8 @@
 import { call, put, takeLatest } from 'redux-saga/effects'
 
 import * as service from 'service/postsService'
-import * as actions from 'actions/postsActions'
-import * as constants from 'constants/postsConstants'
+import * as actions from 'actions/modules/postsActions'
+import * as constants from 'constants/modules/postsConstants'
 
 function* getAllPosts() {
   try {
