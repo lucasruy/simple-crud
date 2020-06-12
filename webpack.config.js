@@ -11,11 +11,13 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'scripts/[name].[contenthash].js',
+    publicPath: '/',
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: false,
     port: 9090,
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -67,6 +69,7 @@ const config = {
       actions: path.resolve(__dirname, 'src/scripts/actions/'),
       components: path.resolve(__dirname, 'src/scripts/components/'),
       constants: path.resolve(__dirname, 'src/scripts/constants/'),
+      pages: path.resolve(__dirname, 'src/scripts/pages/'),
       service: path.resolve(__dirname, 'src/scripts/service/'),
       sagas: path.resolve(__dirname, 'src/scripts/sagas/'),
     },
