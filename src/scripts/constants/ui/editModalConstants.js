@@ -1,0 +1,2 @@
+export const UI_EDIT_MODAL_OPEN = '@UI_EDIT_MODAL_OPEN'
+export const UI_EDIT_MODAL_CLOSE = '@UI_EDIT_MODAL_CLOSE'
