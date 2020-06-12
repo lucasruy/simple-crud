@@ -15,7 +15,7 @@ const RoutesMiddleware = ({ component, exact, path, privateRoute }) => {
 }
 
 RoutesMiddleware.propTypes = {
-  component: PropTypes.node.isRequired,
+  component: PropTypes.func.isRequired,
   exact: PropTypes.bool.isRequired,
   path: PropTypes.string.isRequired,
   privateRoute: PropTypes.bool.isRequired,

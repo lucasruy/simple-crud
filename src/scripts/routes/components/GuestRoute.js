@@ -17,7 +17,7 @@ const GuestRoute = ({ component: Component, ...rest }) => {
 }
 
 GuestRoute.propTypes = {
-  component: PropTypes.component,
+  component: PropTypes.func.isRequired,
 }
 
 export default withRouter(GuestRoute)
