@@ -13,7 +13,9 @@ const CreatePost = () => (
       <Textarea label="Content" name="content" placeholder="Content here" />
     </CardContent>
     <CardFooter align="right">
-      <Button>Create</Button>
+      <Button type="button" withoutMargin>
+        Create
+      </Button>
     </CardFooter>
   </Card>
 )

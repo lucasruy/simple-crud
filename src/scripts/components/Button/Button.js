@@ -1,17 +1,18 @@
 import React from 'react'
+import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import './button.css'
 
-const Button = ({ children, variant, ...props }) => {
+const Button = ({ children, variant, withoutMargin, ...props }) => {
   const variantsDictionary = {
     default: 'button--default',
     outline: 'button--outline',
   }
 
-  const buttonClasses = `button ${variantsDictionary[variant]}`
+  const buttonClasses = classNames({ button: true, 'button--no-margin': withoutMargin })
 
   return (
-    <button className={buttonClasses} {...props}>
+    <button className={`${buttonClasses} ${variantsDictionary[variant]}`} {...props}>
       {children}
     </button>
   )
@@ -24,6 +25,7 @@ Button.defaultProps = {
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   variant: PropTypes.string,
+  withoutMargin: PropTypes.bool,
 }
 
 export default Button
