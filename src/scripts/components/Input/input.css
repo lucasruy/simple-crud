@@ -3,6 +3,10 @@
   margin-top: 20px;
   width: 100%;
 
+  &--no-margin {
+    margin: 0;
+  }
+
   label {
     display: block;
     font-weight: normal;

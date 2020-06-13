@@ -9,7 +9,7 @@ const CreatePost = () => (
   <Card>
     <CardHeader title="What's on your mind?" />
     <CardContent>
-      <Input label="Title" name="title" placeholder="Hello world" />
+      <Input label="Title" name="title" placeholder="Hello world" withoutMargin />
       <Textarea label="Content" name="content" placeholder="Content here" />
     </CardContent>
     <CardFooter align="right">
