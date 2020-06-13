@@ -1,18 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
+import { Redirect } from 'react-router-dom'
 import './initial.css'
 
 import LogoSVG from 'assets/images/svg/codeleap-logo.svg'
 
-import { FadeTransition } from 'components/FadeTransition'
+const Initial = () => {
+  const [isReadyToRedirect, setIsReadyToRedirect] = useState(false)
 
-const Initial = () => (
-  <FadeTransition>
+  const setRedirectState = () => {
+    setIsReadyToRedirect(true)
+  }
+
+  const animation = {
+    animate: { opacity: 1 },
+    initial: { opacity: 0 },
+    exit: { opacity: 0 },
+    transition: {
+      ease: 'easeInOut',
+      duration: 1.5,
+    },
+  }
+
+  if (isReadyToRedirect) {
+    return <Redirect to="/home" />
+  }
+
+  return (
     <div className="initial">
-      <div className="initial-logo">
-        <img src={LogoSVG} />
-      </div>
+      <motion.div {...animation} onAnimationComplete={setRedirectState}>
+        <div className="initial-logo">
+          <img src={LogoSVG} />
+        </div>
+      </motion.div>
     </div>
-  </FadeTransition>
-)
+  )
+}
 
 export default Initial
