@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import EditSVG from '../../../../../assets/images/svg/icon-edit.svg'
 import DeleteSVG from '../../../../../assets/images/svg/icon-delete.svg'
@@ -8,8 +8,9 @@ import DeleteSVG from '../../../../../assets/images/svg/icon-delete.svg'
 import * as editModalActions from 'actions/ui/editModalActions'
 import * as deleteAlertActions from 'actions/ui/deleteAlertActions'
 
-const PostInteractions = ({ id }) => {
+const PostInteractions = ({ id, author }) => {
   const dispatch = useDispatch()
+  const { user } = useSelector((state) => state.user)
 
   const openModal = () => {
     dispatch(editModalActions.setModalOpen(id))
@@ -17,6 +18,10 @@ const PostInteractions = ({ id }) => {
 
   const openAlert = () => {
     dispatch(deleteAlertActions.setAlertOpen(id))
+  }
+
+  if (author !== user.payload.name) {
+    return null
   }
 
   return (
@@ -33,6 +38,7 @@ const PostInteractions = ({ id }) => {
 
 PostInteractions.propTypes = {
   id: PropTypes.number.isRequired,
+  author: PropTypes.string.isRequired,
 }
 
 export default PostInteractions

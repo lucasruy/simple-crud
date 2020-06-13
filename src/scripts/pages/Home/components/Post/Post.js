@@ -10,7 +10,7 @@ const Post = ({ id, title, content, author, date }) => {
   return (
     <div className="post">
       <Card>
-        <CardHeader title={title} background="black" extra={<PostInteractions id={id} />} />
+        <CardHeader title={title} background="black" extra={<PostInteractions id={id} author={author} />} />
         <CardContent>
           <div className="post__infos">
             <p>@{author}</p>
