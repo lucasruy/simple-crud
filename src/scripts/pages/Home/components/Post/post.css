@@ -1,0 +1,27 @@
+.post {
+  margin-top: 20px;
+
+  &__infos {
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-grey-dark);
+    margin-bottom: 18px;
+  }
+
+  &__interactions {
+    display: flex;
+    justify-content: space-between;
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+  }
+}
