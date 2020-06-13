@@ -18,6 +18,13 @@
       justify-content: center;
       width: 30px;
       height: 30px;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: opacity 200ms ease;
+
+      &:hover {
+        opacity: 1;
+      }
 
       &:not(:last-child) {
         margin-right: 15px;
