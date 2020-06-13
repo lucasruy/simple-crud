@@ -1,17 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-
-import { Login } from 'pages/Login'
 import { Home } from 'pages/Home'
+import { Login } from 'pages/Login'
+import { Initial } from 'pages/Initial'
 
 import RenderRoutes from './components/RenderRoutes'
-
-const ProvisoryComponent = () => (
-  <div>
-    <h1>Initial Page.</h1>
-    <Link to="/login">Login</Link>
-  </div>
-)
 
 const ROUTES = [
   {
@@ -19,7 +10,7 @@ const ROUTES = [
     key: 'INIT',
     exact: true,
     privateRoute: false,
-    component: ProvisoryComponent,
+    component: Initial,
   },
   {
     path: '/login',

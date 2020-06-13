@@ -1,0 +1,19 @@
+.initial {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-white);
+
+  .initial-logo {
+    display: flex;
+    align-items: center;
+    max-width: 625px;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+
+    img {
+      width: 85%;
+      margin: 0 auto;
+    }
+  }
+}
