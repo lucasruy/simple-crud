@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'
 
-import EditSVG from '../../../../../assets/images/svg/icon-edit.svg'
-import DeleteSVG from '../../../../../assets/images/svg/icon-delete.svg'
+import EditSVG from 'assets/images/svg/icon-edit.svg'
+import DeleteSVG from 'assets/images/svg/icon-delete.svg'
 
 import * as editModalActions from 'actions/ui/editModalActions'
 import * as deleteAlertActions from 'actions/ui/deleteAlertActions'
