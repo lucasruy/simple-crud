@@ -16,7 +16,7 @@ const config = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: false,
-    port: 9090,
+    port: 9999,
     historyApiFallback: true,
   },
   module: {
