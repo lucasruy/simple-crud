@@ -4,8 +4,8 @@ const INITIAL_STATE = {
   user: {
     isRequest: true,
     payload: {
-      name: 'Victor',
-      isAuthenticated: true,
+      name: null,
+      isAuthenticated: false,
     },
     error: {},
   },
