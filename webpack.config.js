@@ -73,6 +73,7 @@ const config = {
       pages: path.resolve(__dirname, 'src/scripts/pages/'),
       service: path.resolve(__dirname, 'src/scripts/service/'),
       sagas: path.resolve(__dirname, 'src/scripts/sagas/'),
+      utils: path.resolve(__dirname, 'src/scripts/utils/'),
     },
   },
   plugins: [
