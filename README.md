@@ -25,8 +25,8 @@ This app is a post feed (like Medium.com, but a little bit simpler). It uses an 
 **General functionality:**
 
 - Authenticate users (login pages)
-- CRUD Articles
-- GET and display paginated lists of articles
+- CRUD posts
+- GET and display lists of posts
 
 ## Accessing the application
 
