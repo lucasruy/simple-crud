@@ -9,12 +9,14 @@ const Initial = () => {
   const [isReadyToRedirect, setIsReadyToRedirect] = useState(false)
 
   const setRedirectState = () => {
-    setIsReadyToRedirect(true)
+    setTimeout(() => {
+      setIsReadyToRedirect(true)
+    }, 1000)
   }
 
   const animation = {
-    animate: { opacity: 1 },
-    initial: { opacity: 0 },
+    animate: { opacity: 1, scale: 1 },
+    initial: { opacity: 0, scale: 3 },
     exit: { opacity: 0 },
     transition: {
       ease: 'easeInOut',
