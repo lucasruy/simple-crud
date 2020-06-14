@@ -3,6 +3,7 @@ import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 
 import * as postsActions from 'actions/modules/postsActions'
 
+import { Shell, ShellPost } from 'components/Shell'
 import { Post } from './Post'
 
 const PostList = () => {
@@ -12,6 +13,15 @@ const PostList = () => {
   useEffect(() => {
     dispatch(postsActions.getAllPosts())
   }, [])
+
+  if (posts.get.isRequest) {
+    return (
+      <Shell>
+        <ShellPost />
+        <ShellPost />
+      </Shell>
+    )
+  }
 
   return (
     <ul>

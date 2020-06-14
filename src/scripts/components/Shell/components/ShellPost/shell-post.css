@@ -1,0 +1,60 @@
+.shell-post {
+  box-sizing: border-box;
+  width: 100%;
+  background: var(--color-white);
+  border: 1px solid var(--color-grey-darken);
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+
+  &__header {
+    padding: 25px 30px;
+    margin-bottom: 30px;
+
+    span {
+      display: block;
+      width: 100%;
+      max-width: 250px;
+      height: 20px;
+      background-color: var(--color-shell);
+      animation: fade 1s ease-in-out infinite;
+    }
+  }
+
+  &__content {
+    padding: 25px 30px;
+    margin-bottom: 30px;
+
+    &-infos {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 18px;
+
+      span {
+        display: block;
+        width: 100%;
+        max-width: 125px;
+        height: 20px;
+        background-color: var(--color-shell);
+        animation: fade 1s ease-in-out infinite;
+      }
+    }
+
+    &-text {
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        display: block;
+        width: 100%;
+        max-width: 125px;
+        height: 20px;
+        background-color: var(--color-shell);
+        animation: fade 1s ease-in-out infinite;
+
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

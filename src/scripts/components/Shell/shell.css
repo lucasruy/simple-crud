@@ -1,0 +1,19 @@
+.shell {
+  box-sizing: border-box;
+  width: 100%;
+  background: var(--color-white);
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.75;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.75;
+  }
+}
