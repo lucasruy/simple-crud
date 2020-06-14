@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 
 import * as postsActions from 'actions/modules/postsActions'
 
@@ -7,7 +7,7 @@ import { Post } from './Post'
 
 const PostList = () => {
   const dispatch = useDispatch()
-  const posts = useSelector((state) => state.posts)
+  const posts = useSelector((state) => state.posts, shallowEqual)
 
   useEffect(() => {
     dispatch(postsActions.getAllPosts())

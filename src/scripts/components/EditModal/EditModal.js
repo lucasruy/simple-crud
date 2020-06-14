@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 import './edit-modal.css'
 
 import * as postsActions from 'actions/modules/postsActions'
@@ -11,7 +11,7 @@ import { Textarea } from 'components/Textarea'
 
 const EditModal = () => {
   const dispatch = useDispatch()
-  const { modal } = useSelector((state) => state)
+  const { modal } = useSelector((state) => state, shallowEqual)
 
   const closeModal = () => {
     dispatch(editModalActions.setModalClose())

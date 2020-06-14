@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 import './delete-alert.css'
 
 import * as postsActions from 'actions/modules/postsActions'
@@ -9,7 +9,7 @@ import { Button } from 'components/Button'
 
 const DeleteAlert = () => {
   const dispatch = useDispatch()
-  const { alert } = useSelector((state) => state)
+  const { alert } = useSelector((state) => state, shallowEqual)
 
   const closeAlert = () => {
     dispatch(deleteAlertActions.setAlertClose())

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 
 import EditSVG from 'assets/images/svg/icon-edit.svg'
 import DeleteSVG from 'assets/images/svg/icon-delete.svg'
@@ -10,7 +10,7 @@ import * as deleteAlertActions from 'actions/ui/deleteAlertActions'
 
 const PostInteractions = ({ id, author }) => {
   const dispatch = useDispatch()
-  const { user } = useSelector((state) => state.user)
+  const { user } = useSelector((state) => state.user, shallowEqual)
 
   const openModal = () => {
     dispatch(editModalActions.setModalOpen(id))

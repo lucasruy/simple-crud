@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 
 import * as postsActions from 'actions/modules/postsActions'
 
@@ -10,7 +10,7 @@ import { Card, CardHeader, CardContent, CardFooter } from 'components/Card'
 
 const CreatePost = () => {
   const dispatch = useDispatch()
-  const { user } = useSelector((state) => state.user)
+  const { user } = useSelector((state) => state.user, shallowEqual)
 
   const createPost = (e) => {
     e.preventDefault()
