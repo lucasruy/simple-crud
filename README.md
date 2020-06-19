@@ -1,4 +1,4 @@
-<h1>CodeLeap Network</h1>
+<h1>Simple CRUD</h1>
 <p>
   <img src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/LucasRuy/rollup-boilerplate/blob/master/LICENSE">
@@ -36,6 +36,6 @@ To gain access to the main page with all posts, you need to use the following us
 
 ## Author
 
-**Lucas Ruy &lt;lukas.r@hotmail.com.br&gt;**
+**Lucas Ruy &lt;lucasplet@gmail.com&gt;**
 
 - Github: [@lucasruy](https://github.com/lucasruy)
